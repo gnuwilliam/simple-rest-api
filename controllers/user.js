@@ -8,7 +8,7 @@ exports.create = function(req, res) {
     }
 
     new User({
-      name: req.body.fullName,
+      name: req.body.name,
       surname: req.body.surname,
       username: req.body.username,
       email: req.body.email,
