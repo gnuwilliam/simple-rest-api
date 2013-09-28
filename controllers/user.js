@@ -18,3 +18,9 @@ exports.create = function(req, res) {
     res.send('success');
   });
 }
+
+exports.read = function(req, res) {
+  User.findOne({ _id: req.params.id }, function(err, user) {
+    res.send(user);
+  });
+}
