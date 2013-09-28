@@ -24,3 +24,17 @@ exports.read = function(req, res) {
     res.send(user);
   });
 }
+
+
+exports.update = function(req, res) {
+  User.update({ _id: req.params.id }, {
+    $set: {
+      name: req.body.name,
+      surname: req.body.surname,
+      email: req.body.email,
+      password: req.body.password
+    }
+  }).exec();
+
+  return res.send('success');
+}
