@@ -38,3 +38,15 @@ exports.update = function(req, res) {
 
   return res.send('success');
 }
+
+exports.delete = function(req, res) {
+  return User.findById(req.body.id, function(err, user) {
+    return user.remove(function (err) {
+      if (!err) {
+        return res.send('removed');
+      } else {
+        return res.send(err);
+      }
+    });
+  });
+}
