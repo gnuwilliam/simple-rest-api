@@ -50,3 +50,9 @@ exports.delete = function(req, res) {
     });
   });
 }
+
+exports.list = function(req, res) {
+  User.find(function(err, users) {
+    res.send(users);
+  });
+}
